@@ -53,8 +53,8 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <200>;
-            bindings = <&kp N3>, <&kp N3>;
-            hold-trigger = <200>; // adjust as necessary for repeat rate
+            bindings = <&kp N3 &kp N3>;
+            hold-trigger = <200>; // Adjust as necessary for repeat rate
         };
     };
 };
