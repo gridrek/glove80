@@ -265,14 +265,15 @@
 / {
     behaviors {
         turbo: turbo {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            tapping-term-ms = <200>;
-            quick-tap-ms = <100>;  // Adjust the speed of turbo effect
-            bindings = <&kp>, <&kp>;  // Both tap and hold will send key presses
+            compatible = "zmk,behavior-key-repeat";
+            #binding-cells = <1>;
+            wait-ms = <500>;  // Initial delay before repeating starts (in ms)
+            repeat-ms = <50>; // Delay between each repeat (in ms)
         };
     };
 };
+
+
 
 /* Automatically generated macro definitions */
 / {
@@ -284,6 +285,7 @@
         };
     };
 };
+
 
 /* Automatically generated keymap */
 / {
