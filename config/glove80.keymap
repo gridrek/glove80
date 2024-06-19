@@ -35,7 +35,7 @@
 
 
 /* Glove80 system behavior & macros */
- / {
+/ {
     behaviors {
         // For the "layer" key, it'd nice to be able to use it as either a shift or a toggle.
         // Configure it as a tap dance, so the first tap (or hold) is a &mo and the second tap is a &to
@@ -179,18 +179,6 @@
     };
 };
 
-/ {
-    turbo3: turbo3 {
-        compatible = "zmk,behavior-hold-tap";
-        label = "TURBO_HOLD_TAP";
-        #binding-cells = <2>;
-        flavor = "tap-preferred";
-        tapping-term-ms = <200>;
-        bindings = <&kp 0x1A>, <&kp 0x1A>;  // Using number '3' keycode
-    };
-};
-
-
 /* #define for key positions */
 #define POS_LH_T1 52
 #define POS_LH_T2 53
@@ -305,7 +293,7 @@
         layer_Lower {
             bindings = <
                &trans    &trans      &trans        &trans         &trans                                                                                          &trans            &trans         &trans             &trans  &trans
-               &trans     &none       &none         &turbo3          &none         &none                                                       &none                 &none             &none          &none              &none  &trans
+               &trans     &none       &none         &none          &none         &none                                                       &none                 &none             &none          &none              &none  &trans
                &trans     &none       &none   &kp KP_LPAR    &kp KP_RPAR      &kp BSLH                                                  &kp LS(N8)            &kp LS(N1)         &kp EQUAL  &kp LS(EQUAL)         &kp LS(N5)  &trans
                &trans  &kp LBKT    &kp RBKT  &kp LS(LBKT)   &kp LS(RBKT)  &kp LS(BSLH)                                                  &kp LS(N3)  &kp LS(SINGLE_QUOTE)           &kp SQT       &kp SEMI  &kp LS(SEMICOLON)  &trans
                &trans     &none  &kp LS(N4)     &kp MINUS  &kp LS(MINUS)         &none  &trans  &trans   &to 0  &trans  &trans  &trans   &kp COMMA      &kp LS(NUMBER_7)  &kp LS(NUMBER_2)          &none       &kp LS(FSLH)  &trans
