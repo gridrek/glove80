@@ -263,13 +263,28 @@
 
 /* Custom Defined Behaviors */
 / {
-
+    behaviors {
+        turbo: turbo {
+            compatible = "zmk,behavior-hold-tap";
+            label = "TURBO";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <100>;  // Adjust the speed of turbo effect
+            hold-trigger-key-press-ms = <50>;
+            bindings = <&kp>, <&kp>;  // Both tap and hold will send key presses
+        };
+    };
 };
 
 /* Automatically generated macro definitions */
 / {
     macros {
-    
+        turbo_a_macro: turbo_a_macro {
+            label = "TURBO_A";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&turbo &kp N3>;
+        };
     };
 };
 
@@ -293,7 +308,7 @@
         layer_Lower {
             bindings = <
                &trans    &trans      &trans        &trans         &trans                                                                                          &trans            &trans         &trans             &trans  &trans
-               &trans     &none       &none         &none          &none         &none                                                       &none                 &none             &none          &none              &none  &trans
+               &trans     &none       &none         &turbo_a_macro          &none         &none                                                       &none                 &none             &none          &none              &none  &trans
                &trans     &none       &none   &kp KP_LPAR    &kp KP_RPAR      &kp BSLH                                                  &kp LS(N8)            &kp LS(N1)         &kp EQUAL  &kp LS(EQUAL)         &kp LS(N5)  &trans
                &trans  &kp LBKT    &kp RBKT  &kp LS(LBKT)   &kp LS(RBKT)  &kp LS(BSLH)                                                  &kp LS(N3)  &kp LS(SINGLE_QUOTE)           &kp SQT       &kp SEMI  &kp LS(SEMICOLON)  &trans
                &trans     &none  &kp LS(N4)     &kp MINUS  &kp LS(MINUS)         &none  &trans  &trans   &to 0  &trans  &trans  &trans   &kp COMMA      &kp LS(NUMBER_7)  &kp LS(NUMBER_2)          &none       &kp LS(FSLH)  &trans
