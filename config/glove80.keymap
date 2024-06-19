@@ -266,11 +266,9 @@
     behaviors {
         turbo: turbo {
             compatible = "zmk,behavior-hold-tap";
-            label = "TURBO";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
             quick-tap-ms = <100>;  // Adjust the speed of turbo effect
-            hold-trigger-key-press-ms = <50>;
             bindings = <&kp>, <&kp>;  // Both tap and hold will send key presses
         };
     };
@@ -280,7 +278,6 @@
 / {
     macros {
         turbo_a_macro: turbo_a_macro {
-            label = "TURBO_A";
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&turbo &kp N3>;
