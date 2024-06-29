@@ -14,12 +14,11 @@
  */
 
 #include <behaviors.dtsi>
+/* Include all behavior includes needed */
 #include <dt-bindings/zmk/outputs.h>
 #include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/rgb.h>
-#include <zmk/keys.h>
-#include <zmk/macro.h>
 
 /* Automatically generated layer name #define */
 #define LAYER_Base 0
@@ -31,34 +30,6 @@
 #define LAYER_Lower 0
 #endif
 
-/* Define Custom Keycodes */
-enum custom_keycodes {
-    KC_AE = SAFE_RANGE,
-    KC_AA,
-    KC_OE
-};
-
-/* Process Record User */
-bool process_record_user(uint16_t keycode, keyrecord_t *record) {
-    switch (keycode) {
-        case KC_AE:
-            if (record->event.pressed) {
-                tap_code16(UC(0x00C4));  // Unicode for "Ä"
-            }
-            return false;
-        case KC_AA:
-            if (record->event.pressed) {
-                tap_code16(UC(0x00C5));  // Unicode for "Å"
-            }
-            return false;
-        case KC_OE:
-            if (record->event.pressed) {
-                tap_code16(UC(0x00D6));  // Unicode for "Ö"
-            }
-            return false;
-    }
-    return true;
-}
 /* Custom Device-tree */
 
 
@@ -298,7 +269,38 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 /* Automatically generated macro definitions */
 / {
     macros {
-    
+        se_a_macro: se_a_macro {
+            label = "SE_A_MACRO";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp RALT>
+                , <&macro_tap &kp W>
+                , <&macro_release &kp RALT>
+                , <&macro_tap &kp A>;
+        };
+
+        se_a_ring_macro: se_a_ring_macro {
+            label = "SE_A_RING_MACRO";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp RALT>
+                , <&macro_tap &kp W>
+                , <&macro_release &kp RALT>
+                , <&macro_tap &kp Q>;
+        };
+
+        se_o_macro: se_o_macro {
+            label = "SE_O_MACRO";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings
+                = <&macro_press &kp RALT>
+                , <&macro_tap &kp W>
+                , <&macro_release &kp RALT>
+                , <&macro_tap &kp O>;
+        };
     };
 };
 
@@ -311,8 +313,8 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
         layer_Base {
             bindings = <
                &kp F1    &kp F2   &kp F3    &kp F4     &kp F5                                                                                  &kp F6     &kp F7    &kp F8       &kp F9      &kp F10
-            &kp EQUAL    &kp N1   &kp N2    &kp N3     &kp N4  &kp N5                                                                  &kp N6  &kp N7     &kp N8    &kp N9       &kp N0  &kp KC_OE
-              &kp TAB     &kp Q    &kp W     &kp F      &kp P   &kp B                                                                   &kp J   &kp L      &kp U     &kp Y  &kp KC_AA  &kp KC_AE
+            &kp EQUAL    &kp N1   &kp N2    &kp N3     &kp N4  &kp N5                                                                  &kp N6  &kp N7     &kp N8    &kp N9       &kp N0  &se_o_macro
+              &kp TAB     &kp Q    &kp W     &kp F      &kp P   &kp B                                                                   &kp J   &kp L      &kp U     &kp Y  &se_a_ring_macro  &se_a_macro
               &kp ESC     &kp A    &kp R     &kp S      &kp T   &kp G                                                                   &kp M   &kp N      &kp E     &kp I        &kp O     &kp BSPC
             &kp GRAVE     &kp Z    &kp X     &kp C      &kp D   &kp V  &kp LSHFT  &kp LCTRL   &kp DEL  &kp LGUI  &kp RCTRL  &kp RSHFT   &kp K   &kp H  &kp COMMA   &kp DOT     &kp FSLH    &kp PG_UP
  &magic LAYER_Magic 0  &kp HOME  &kp END  &kp LEFT  &kp RIGHT          &kp SPACE    &kp TAB  &kp LALT  &kp RALT    &kp RET     &lower          &kp UP   &kp DOWN  &kp LBKT     &kp RBKT    &kp PG_DN
