@@ -263,29 +263,15 @@
 
 /* Custom Defined Behaviors */
 / {
-    behaviors {
-        turbo: turbo {
-            compatible = "zmk,behavior-key-repeat";
-            #binding-cells = <1>;
-            wait-ms = <500>;  // Initial delay before repeating starts (in ms)
-            repeat-ms = <50>; // Delay between each repeat (in ms)
-        };
-    };
+
 };
-
-
 
 /* Automatically generated macro definitions */
 / {
     macros {
-        turbo_a_macro: turbo_a_macro {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&turbo &kp N3>;
-        };
+    
     };
 };
-
 
 /* Automatically generated keymap */
 / {
@@ -295,19 +281,19 @@
 
         layer_Base {
             bindings = <
-               &kp F1    &kp F2   &kp F3    &kp F4     &kp F5                                                                                  &kp F6     &kp F7    &kp F8    &kp F9    &kp F10
-            &kp EQUAL    &kp N1   &kp N2    &kp N3     &kp N4  &kp N5                                                                  &kp N6  &kp N7     &kp N8    &kp N9    &kp N0  &kp MINUS
-              &kp TAB     &kp Q    &kp W     &kp F      &kp P   &kp B                                                                   &kp J   &kp L      &kp U     &kp Y  &kp SEMI   &kp BSLH
-              &kp ESC     &kp A    &kp R     &kp S      &kp T   &kp G                                                                   &kp M   &kp N      &kp E     &kp I     &kp O   &kp BSPC
-            &kp GRAVE     &kp Z    &kp X     &kp C      &kp D   &kp V  &kp LSHFT  &kp LCTRL   &kp DEL  &kp LGUI  &kp RCTRL  &kp RSHFT   &kp K   &kp H  &kp COMMA   &kp DOT  &kp FSLH  &kp PG_UP
- &magic LAYER_Magic 0  &kp HOME  &kp END  &kp LEFT  &kp RIGHT          &kp SPACE    &kp TAB  &kp LALT  &kp RALT    &kp RET     &lower          &kp UP   &kp DOWN  &kp LBKT  &kp RBKT  &kp PG_DN
+               &kp F1    &kp F2   &kp F3    &kp F4     &kp F5                                                                                  &kp F6     &kp F7    &kp F8       &kp F9      &kp F10
+            &kp EQUAL    &kp N1   &kp N2    &kp N3     &kp N4  &kp N5                                                                  &kp N6  &kp N7     &kp N8    &kp N9       &kp N0  &kp U_00D6
+              &kp TAB     &kp Q    &kp W     &kp F      &kp P   &kp B                                                                   &kp J   &kp L      &kp U     &kp Y  &kp U_00C4  &kp U_00C5
+              &kp ESC     &kp A    &kp R     &kp S      &kp T   &kp G                                                                   &kp M   &kp N      &kp E     &kp I        &kp O     &kp BSPC
+            &kp GRAVE     &kp Z    &kp X     &kp C      &kp D   &kp V  &kp LSHFT  &kp LCTRL   &kp DEL  &kp LGUI  &kp RCTRL  &kp RSHFT   &kp K   &kp H  &kp COMMA   &kp DOT     &kp FSLH    &kp PG_UP
+ &magic LAYER_Magic 0  &kp HOME  &kp END  &kp LEFT  &kp RIGHT          &kp SPACE    &kp TAB  &kp LALT  &kp RALT    &kp RET     &lower          &kp UP   &kp DOWN  &kp LBKT     &kp RBKT    &kp PG_DN
             >;
         };
 
         layer_Lower {
             bindings = <
                &trans    &trans      &trans        &trans         &trans                                                                                          &trans            &trans         &trans             &trans  &trans
-               &trans     &none       &none         &turbo_a_macro          &none         &none                                                       &none                 &none             &none          &none              &none  &trans
+               &trans     &none       &none         &none          &none         &none                                                       &none                 &none             &none          &none              &none  &trans
                &trans     &none       &none   &kp KP_LPAR    &kp KP_RPAR      &kp BSLH                                                  &kp LS(N8)            &kp LS(N1)         &kp EQUAL  &kp LS(EQUAL)         &kp LS(N5)  &trans
                &trans  &kp LBKT    &kp RBKT  &kp LS(LBKT)   &kp LS(RBKT)  &kp LS(BSLH)                                                  &kp LS(N3)  &kp LS(SINGLE_QUOTE)           &kp SQT       &kp SEMI  &kp LS(SEMICOLON)  &trans
                &trans     &none  &kp LS(N4)     &kp MINUS  &kp LS(MINUS)         &none  &trans  &trans   &to 0  &trans  &trans  &trans   &kp COMMA      &kp LS(NUMBER_7)  &kp LS(NUMBER_2)          &none       &kp LS(FSLH)  &trans
