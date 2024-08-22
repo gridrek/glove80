@@ -269,38 +269,14 @@
 /* Automatically generated macro definitions */
 / {
     macros {
-        se_a_macro: se_a_macro {
-            label = "SE_A_MACRO";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp RALT>
-                , <&macro_tap &kp W>
-                , <&macro_release &kp RALT>
-                , <&macro_tap &kp A>;
-        };
+    
+    };
+};
 
-        se_a_ring_macro: se_a_ring_macro {
-            label = "SE_A_RING_MACRO";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp RALT>
-                , <&macro_tap &kp W>
-                , <&macro_release &kp RALT>
-                , <&macro_tap &kp Q>;
-        };
-
-        se_o_macro: se_o_macro {
-            label = "SE_O_MACRO";
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings
-                = <&macro_press &kp RALT>
-                , <&macro_tap &kp W>
-                , <&macro_release &kp RALT>
-                , <&macro_tap &kp O>;
-        };
+/* Automatically generated combos definitions */
+/ {
+    combos {
+            compatible = "zmk,combos";
     };
 };
 
@@ -312,12 +288,12 @@
 
         layer_Base {
             bindings = <
-               &kp F1    &kp F2   &kp F3    &kp F4     &kp F5                                                                                  &kp F6     &kp F7    &kp F8       &kp F9      &kp F10
-            &kp EQUAL    &kp N1   &kp N2    &kp N3     &kp N4  &kp N5                                                                  &kp N6  &kp N7     &kp N8    &kp N9       &kp N0  &se_o_macro
-              &kp TAB     &kp Q    &kp W     &kp F      &kp P   &kp B                                                                   &kp J   &kp L      &kp U     &kp Y  &se_a_ring_macro  &se_a_macro
-              &kp ESC     &kp A    &kp R     &kp S      &kp T   &kp G                                                                   &kp M   &kp N      &kp E     &kp I        &kp O     &kp BSPC
-            &kp GRAVE     &kp Z    &kp X     &kp C      &kp D   &kp V  &kp LSHFT  &kp LCTRL   &kp DEL  &kp LGUI  &kp RCTRL  &kp RSHFT   &kp K   &kp H  &kp COMMA   &kp DOT     &kp FSLH    &kp PG_UP
- &magic LAYER_Magic 0  &kp HOME  &kp END  &kp LEFT  &kp RIGHT          &kp SPACE    &kp TAB  &kp LALT  &kp RALT    &kp RET     &lower          &kp UP   &kp DOWN  &kp LBKT     &kp RBKT    &kp PG_DN
+               &kp F1    &kp F2   &kp F3    &kp F4     &kp F5                                                                                  &kp F6     &kp F7    &kp F8        &kp F9    &kp F10
+            &kp EQUAL    &kp N1   &kp N2    &kp N3     &kp N4  &kp N5                                                                  &kp N6  &kp N7     &kp N8    &kp N9        &kp N0   &kp LBKT
+              &kp TAB     &kp Q    &kp W     &kp F      &kp P   &kp B                                                                   &kp J   &kp L      &kp U     &kp Y       &kp SQT   &kp SEMI
+              &kp ESC     &kp A    &kp R     &kp S      &kp T   &kp G                                                                   &kp M   &kp N      &kp E     &kp I         &kp O   &kp BSPC
+            &kp GRAVE     &kp Z    &kp X     &kp C      &kp D   &kp V  &kp LSHFT  &kp LCTRL   &kp DEL  &kp LGUI  &kp RCTRL  &kp RSHFT   &kp K   &kp H  &kp COMMA   &kp DOT  &kp KP_SLASH  &kp PG_UP
+ &magic LAYER_Magic 0  &kp HOME  &kp END  &kp LEFT  &kp RIGHT          &kp SPACE    &kp TAB  &kp LALT  &kp RALT    &kp RET     &lower          &kp UP   &kp DOWN  &kp LBKT      &kp RBKT  &kp PG_DN
             >;
         };
 
@@ -327,7 +303,7 @@
                &trans     &none       &none         &none          &none         &none                                                       &none                 &none             &none          &none              &none  &trans
                &trans     &none       &none   &kp KP_LPAR    &kp KP_RPAR      &kp BSLH                                                  &kp LS(N8)            &kp LS(N1)         &kp EQUAL  &kp LS(EQUAL)         &kp LS(N5)  &trans
                &trans  &kp LBKT    &kp RBKT  &kp LS(LBKT)   &kp LS(RBKT)  &kp LS(BSLH)                                                  &kp LS(N3)  &kp LS(SINGLE_QUOTE)           &kp SQT       &kp SEMI  &kp LS(SEMICOLON)  &trans
-               &trans     &none  &kp LS(N4)     &kp MINUS  &kp LS(MINUS)         &none  &trans  &trans   &to 0  &trans  &trans  &trans   &kp COMMA      &kp LS(NUMBER_7)  &kp LS(NUMBER_2)          &none       &kp LS(FSLH)  &trans
+               &trans     &none  &kp LS(N4)     &kp MINUS  &kp LS(MINUS)         &none  &trans  &trans   &to 0  &trans  &trans  &trans   &kp COMMA      &kp LS(NUMBER_7)  &kp LS(NUMBER_2)          &none              &none  &trans
  &magic LAYER_Magic 0  &kp CAPS     &kp INS        &trans         &trans                &trans  &trans  &trans  &trans  &trans  &trans                            &trans            &trans     &kp KP_DOT       &kp KP_ENTER  &trans
             >;
         };
