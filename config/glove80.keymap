@@ -261,6 +261,50 @@
 #define POS_RH_C6R5 63
 #define POS_RH_C6R6 79
 
+
+/* Special characters accessed with Shift */
+#define SW_EXCL &kp LS(N1)          // Maps to `!` on Swedish layout (Shift + 1)
+#define SW_AT &kp LS(N2)            // Maps to `@` on Swedish layout (Shift + 2)
+#define SW_HASH &kp LS(N3)          // Maps to `#` on Swedish layout (Shift + 3)
+#define SW_DOLLAR &kp LS(N4)        // Maps to `$` on Swedish layout (Shift + 4)
+#define SW_PERCENT &kp LS(N5)       // Maps to `%` on Swedish layout (Shift + 5)
+#define SW_AMPERSAND &kp LS(N6)     // Maps to `&` on Swedish layout (Shift + 6)
+#define SW_SLASH &kp LS(N7)         // Maps to `/` on Swedish layout (Shift + 7)
+#define SW_LPAREN &kp LS(N8)        // Maps to `(` on Swedish layout (Shift + 8)
+#define SW_RPAREN &kp LS(N9)        // Maps to `)` on Swedish layout (Shift + 9)
+#define SW_EQUAL &kp LS(N0)         // Maps to `=` on Swedish layout (Shift + 0)
+#define SW_QUESTION &kp LS(MINUS)   // Maps to `?` on Swedish layout (Shift + `-`)
+#define SW_GRAVE &kp LS(GRAVE)      // Maps to `~` on Swedish layout (Shift + `´`)
+#define SW_ASTERISK &kp LS(BSLH)    // Maps to `*` on Swedish layout (Shift + `\`)
+#define SW_PLUS &kp EQUAL           // Maps to `+` on Swedish layout (`+` key)
+#define SW_UNDERSCORE &kp LS(KP_MINUS) // Maps to `_` on Swedish layout (Shift + `KP_MINUS`)
+
+/* Special characters accessed with AltGr */
+#define SW_PIPE &kp RA(MINUS)       // Maps to `|` on Swedish layout (AltGr + `-`)
+#define SW_TILDE &kp RA(GRAVE)      // Maps to `~` on Swedish layout (AltGr + `´`)
+#define SW_BACKSLASH &kp RA(LBRKT)  // Maps to `\` on Swedish layout (AltGr + `[` )
+#define SW_LBRACKET &kp RA(8)       // Maps to `[` on Swedish layout (AltGr + `8`)
+#define SW_RBRACKET &kp RA(9)       // Maps to `]` on Swedish layout (AltGr + `9`)
+#define SW_CURRENCY &kp RA(4)       // Maps to `¤` on Swedish layout (AltGr + `4`)
+#define SW_EURO &kp RA(5)           // Maps to `€` on Swedish layout (AltGr + `5`)
+#define SW_BRACE_LEFT &kp RA(7)     // Maps to `{` on Swedish layout (AltGr + `7`)
+#define SW_BRACE_RIGHT &kp RA(0)    // Maps to `}` on Swedish layout (AltGr + `0`)
+#define SW_AT_SIGN &kp RA(N2)       // Maps to `@` on Swedish layout (AltGr + `2`)
+#define SW_HASH_SIGN &kp RA(N3)     // Maps to `#` on Swedish layout (AltGr + `3`)
+#define SW_POUND &kp RA(N3)         // Maps to `£` on Swedish layout (AltGr + `3`)
+#define SW_SECTION &kp RA(N4)       // Maps to `§` on Swedish layout (AltGr + `4`)
+
+/* Miscellaneous */
+#define SW_SEMICOLON &kp SQT        // Maps to `;` on Swedish layout
+#define SW_COLON &kp LS(DOT)        // Maps to `:` on Swedish layout (Shift + `.``)
+#define SW_LT &kp COMMA             // Maps to `<` on Swedish layout
+#define SW_GT &kp LS(COMMA)         // Maps to `>` on Swedish layout (Shift + `,`)
+#define SW_QUOTE &kp LS(SQT)        // Maps to `"` on Swedish layout (Shift + `´`)
+#define SW_DOLLAR_SIGN &kp LS(4)    // Maps to `$` on Swedish layout (Shift + `4`)
+#define SW_AMP_SIGN &kp LS(6)       // Maps to `&` on Swedish layout (Shift + `6`)
+
+#define SW_CIRCUMFLEX &kp LS(GRAVE) // Maps to `^` (Shift + `^`)
+
 /* Custom Defined Behaviors */
 / {
 
@@ -300,11 +344,11 @@
         layer_Lower {
             bindings = <
                &trans    &trans      &trans        &trans         &trans                                                                                          &trans            &trans         &trans             &trans  &trans
-               &trans     &none       &none         &none          &none         &none                                                       &none                 &none             &none          &none              &none  &trans
-               &trans     &none       &none   &kp KP_LPAR    &kp KP_RPAR      &kp BSLH                                                  &kp LS(N8)            &kp LS(N1)         &kp EQUAL  &kp LS(EQUAL)         &kp LS(N5)  &trans
-               &trans  &kp LBKT    &kp RBKT  &kp LS(LBKT)   &kp LS(RBKT)  &kp LS(BSLH)                                                  &kp LS(N3)  &kp LS(SINGLE_QUOTE)           &kp SQT       &kp SEMI  &kp LS(SEMICOLON)  &trans
-               &trans     &none  &kp LS(N4)     &kp MINUS  &kp LS(MINUS)         &none  &trans  &trans   &to 0  &trans  &trans  &trans   &kp COMMA      &kp LS(NUMBER_7)  &kp LS(NUMBER_2)          &none              &none  &trans
- &magic LAYER_Magic 0  &kp CAPS     &kp INS        &trans         &trans                &trans  &trans  &trans  &trans  &trans  &trans                            &trans            &trans     &kp KP_DOT       &kp KP_ENTER  &trans
+               &trans     &none     &kp INS      &kp CAPS          &none         &none                                                       &none                 &none             &none          &none              &none  &trans
+               &trans     SW_LT       SW_GT     SW_LPAREN      SW_RPAREN  SW_BACKSLASH                                                 SW_ASTERISK               SW_EXCL          SW_EQUAL        SW_PLUS         SW_PERCENT  &trans
+               &trans  SW_LBRACKET  SW_RBRACKET  SW_BRACE_LEFT  SW_BRACE_RIGHT  SW_PIPE                                                    SW_HASH              SW_QUOTE           &kp SQT   SW_SEMICOLON           SW_COLON  &trans
+               &trans     SW_CIRCUMFLEX   SW_DOLLAR     &kp MINUS  SW_UNDERSCORE         &none  &trans  &trans   &to 0  &trans  &trans  &trans   &kp COMMA           SW_AMP_SIGN             SW_AT       SW_TILDE        SW_QUESTION  &trans
+ &magic LAYER_Magic 0  &trans     &trans        &trans         &trans                &trans  &trans  &trans  &trans  &trans  &trans                            &trans            &trans     &kp KP_DOT       &kp KP_ENTER  &trans
             >;
         };
 
