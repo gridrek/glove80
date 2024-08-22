@@ -313,7 +313,247 @@
 /* Automatically generated macro definitions */
 / {
     macros {
-    
+        directoryUp: directoryUp {
+            label = "&DIRECTORYUP";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            
+            
+            bindings
+                = <&kp DOT>
+                , <&kp DOT>
+                , <&kp KP_SLASH>;
+        };
+    backslash: backslash {
+            label = "&BACKSLASH";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            
+            
+            bindings
+                = <&sk RALT>
+                , <&kp MINUS>;
+        };
+    star: star {
+            label = "&STAR";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            
+            
+            bindings
+                = <&sk LSHFT>
+                , <&kp BSLH>;
+        };
+    slash: slash {
+            label = "&SLASH";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            
+            
+            bindings
+                = <&sk LSHFT>
+                , <&kp N7>;
+        };
+    caret: caret {
+            label = "&CARET";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            
+            
+            bindings
+                = <&sk LSHFT>
+                , <&kp RBKT>;
+        };
+    hash: hash {
+            label = "&HASH";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            
+            
+            bindings
+                = <&sk LSHFT>
+                , <&kp N3>;
+        };
+    equal: equal {
+            label = "&EQUAL";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            
+            
+            bindings
+                = <&sk LSHFT>
+                , <&kp N0>;
+        };
+    exclamation: exclamation {
+            label = "&EXCLAMATION";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            
+            
+            bindings
+                = <&sk LSHFT>
+                , <&kp N1>;
+        };
+    quote: quote {
+            label = "&QUOTE";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            
+            
+            bindings
+                = <&sk LSHFT>
+                , <&kp N2>;
+        };
+    morehthan: morehthan {
+            label = "&MOREHTHAN";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            
+            
+            bindings
+                = <&sk LSHFT>
+                , <&kp NON_US_BSLH>;
+        };
+    tilde: tilde {
+            label = "&TILDE";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            
+            
+            bindings
+                = <&sk RALT>
+                , <&kp RBKT>;
+        };
+    dollar: dollar {
+            label = "&DOLLAR";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            
+            
+            bindings
+                = <&sk RALT>
+                , <&kp N4>;
+        };
+    leftbraces: leftbraces {
+            label = "&LEFTBRACES";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            
+            
+            bindings
+                = <&sk RALT>
+                , <&kp N7>;
+        };
+    rightbraces: rightbraces {
+            label = "&RIGHTBRACES";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            
+            
+            bindings
+                = <&sk RALT>
+                , <&kp N0>;
+        };
+    rightbrackets: rightbrackets {
+            label = "&RIGHTBRACKETS";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            
+            
+            bindings
+                = <&sk RALT>
+                , <&kp N9>;
+        };
+    leftbrackets: leftbrackets {
+            label = "&LEFTBRACKETS";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            
+            
+            bindings
+                = <&sk RALT>
+                , <&kp N8>;
+        };
+    leftparentheses: leftparentheses {
+            label = "&LEFTPARENTHESES";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            
+            
+            bindings
+                = <&sk LSHFT>
+                , <&kp N8>;
+        };
+    rightparentheses: rightparentheses {
+            label = "&RIGHTPARENTHESES";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            
+            
+            bindings
+                = <&sk LSHFT>
+                , <&kp N9>;
+        };
+    pipe: pipe {
+            label = "&PIPE";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            
+            
+            bindings
+                = <&sk RALT>
+                , <&kp NON_US_BSLH>;
+        };
+    and: and {
+            label = "&AND";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            
+            
+            bindings
+                = <&sk LSHFT>
+                , <&kp N6>;
+        };
+    colon: colon {
+            label = "&COLON";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            
+            
+            bindings
+                = <&sk LSHFT>
+                , <&kp DOT>;
+        };
+    at: at {
+            label = "&AT";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            
+            
+            bindings
+                = <&sk RALT>
+                , <&kp N2>;
+        };
+    questionmark: questionmark {
+            label = "&QUESTIONMARK";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            
+            
+            bindings
+                = <&sk LSHFT>
+                , <&kp MINUS>;
+        };
+    percent: percent {
+            label = "&PERCENT";
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            
+            
+            bindings
+                = <&sk LSHFT>
+                , <&kp N5>;
+        };
     };
 };
 
@@ -342,15 +582,16 @@
         };
 
         layer_Lower {
-            bindings = <
-               &trans    &trans      &trans        &trans         &trans                                                                                          &trans            &trans         &trans             &trans  &trans
-               &trans     &none     &kp INS      &kp CAPS          &none         &none                                                       &none                 &none             &none          &none              &none  &trans
-               &trans     SW_LT       SW_GT     SW_LPAREN      SW_RPAREN  SW_BACKSLASH                                                 SW_ASTERISK               SW_EXCL          SW_EQUAL        SW_PLUS         SW_PERCENT  &trans
-               &trans  SW_LBRACKET  SW_RBRACKET  SW_BRACE_LEFT  SW_BRACE_RIGHT  SW_PIPE                                                    SW_HASH              SW_QUOTE           &kp SQT   SW_SEMICOLON           SW_COLON  &trans
-               &trans     SW_CIRCUMFLEX   SW_DOLLAR     &kp MINUS  SW_UNDERSCORE         &none  &trans  &trans   &to 0  &trans  &trans  &trans   &kp COMMA           SW_AMP_SIGN             SW_AT       SW_TILDE        SW_QUESTION  &trans
- &magic LAYER_Magic 0  &trans     &trans        &trans         &trans                &trans  &trans  &trans  &trans  &trans  &trans                            &trans            &trans     &kp KP_DOT       &kp KP_ENTER  &trans
-            >;
-        };
+    bindings = <
+        &trans    &trans      &trans        &trans         &trans                                                                                          &trans            &trans         &trans             &trans  &trans,
+        &trans    &none     &kp INS      &kp CAPS         &none         &none                                                  &none                &none             &none          &none              &none  &trans,
+        &trans    &less_than  &more_than &leftparentheses  &rightparentheses  &backslash    &star    &exclamation    &equal  &plus   &percent   &trans,
+        &trans    &leftbrackets  &rightbrackets  &leftbraces  &rightbraces  &pipe    &hash    &quote  &kp SQT   &colon  &trans,
+        &trans    &caret   &dollar     &kp MINUS  &underscore   &none  &trans  &trans   &to 0  &trans  &trans  &trans  &kp COMMA   &and   &at       &tilde  &questionmark  &trans,
+        &magic LAYER_Magic 0  &trans    &trans        &trans         &trans                &trans  &trans  &trans  &trans  &trans  &trans    &trans  &trans     &kp KP_DOT       &kp KP_ENTER  &trans
+    >;
+};
+
 
         layer_Magic {
             bindings = <
